@@ -1,0 +1,22 @@
+  let data ;
+  if (req.file != ''&&req.file != undefined ) {
+    uplode.single('userImage')
+    console.log(req.file);
+      data = {
+        userName: req.body.userName,
+        phone: req.body.phone,
+        email: req.body.email,
+        gender: req.body.gender,
+        userImage: '/uplode/' + req.file.filename,
+        date: Date(Date.now())
+      }
+  }else{
+    // //console.log("adasd",req.file);
+    data = {
+      userName: req.body.userName,
+      phone: req.body.phone,
+      email: req.body.email,
+      gender: req.body.gender,
+      date: Date(Date.now())
+    }
+  }
